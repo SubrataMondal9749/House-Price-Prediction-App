@@ -9,7 +9,7 @@ Built as part of my learning journey in Data Science and deployed using Streamli
 This project demonstrates the **complete machine learning workflow** — from data cleaning and feature engineering to model building and web app deployment.  
 Users can enter property details and instantly get a predicted price.
 
-App Link : https://house-price-prediction-app-1-jh2d.onrender.com
+Live App : https://house-price-prediction-app-1-jh2d.onrender.com
 
 ---
 
