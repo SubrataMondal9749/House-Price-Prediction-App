@@ -42,5 +42,6 @@ Users can enter property details and instantly get a predicted price.
 
 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/SubrataMondal9749/Hosue_PricePrediction.git
-cd Hosue_PricePrediction
+git clone https://github.com/SubrataMondal9749/House-Price-Prediction-App.git
+cd House-Price-Prediction-App
+
