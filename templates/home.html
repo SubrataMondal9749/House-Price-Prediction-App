@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI House Price Predictor</title>
+
+    
+    <link rel="stylesheet" href="../static/style.css">
+    
+  </head>
+
+  <body>
+    <!-- Neon Floating Orbs -->
+    <div class="orb cyan"></div>
+    <div class="orb green"></div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+      <!-- Left: Form Section -->
+      <div class="form-container">
+        <h2>🏠 AI House Price Predictor</h2>
+        <form action="{{ url_for('predict') }}" method="post">
+          <label for="square_feet">Square Feet</label>
+          <input
+            type="number"
+            step="any"
+            name="square_feet"
+            id="square_feet"
+            placeholder="Enter area in square feet"
+            required
+          />
+
+          <label for="num_rooms">Number of Rooms</label>
+          <input
+            type="number"
+            step="any"
+            name="num_rooms"
+            id="num_rooms"
+            placeholder="Enter total rooms"
+            required
+          />
+
+          <label for="age">Age of Property</label>
+          <input
+            type="number"
+            step="any"
+            name="age"
+            id="age"
+            placeholder="Enter property age"
+            required
+          />
+
+          <label for="distance_to_city">Distance to City (km)</label>
+          <input
+            type="number"
+            step="any"
+            name="Population"
+            id="distance_to_city"
+            placeholder="Enter distance to nearest city"
+            required
+          />
+
+          <button type="submit">🚀 Predict Price</button>
+        </form>
+      </div>
+
+      <!-- Right: Prediction Output -->
+      <div class="result-container">
+        {% if prediction_text %}
+        <div>
+          <h3>💡 Prediction Result:</h3>
+          <p>{{ prediction_text }}</p>
+        </div>
+        {% else %}
+        <p>✨ Prediction result will appear here...</p>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

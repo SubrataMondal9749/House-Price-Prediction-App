@@ -1,0 +1,231 @@
+/* ===== Base Styling ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===== Background Image with Blur Effect ===== */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("House.jpg") no-repeat center center/cover;
+  filter: blur(1px) brightness(1);
+  z-index: 0;
+}
+
+
+
+
+/* ===== Neon Gradient Overlay ===== */
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left,
+      #0a0f1d90,
+      #122644aa,
+      #1f406890);
+  z-index: 1;
+}
+
+/* ===== Floating Neon Orbs ===== */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+  z-index: 2;
+  animation: floatOrb 6s infinite alternate;
+}
+
+.orb.cyan {
+  width: 350px;
+  height: 350px;
+  background: #00ffff;
+  top: -80px;
+  left: -90px;
+}
+
+.orb.green {
+  width: 400px;
+  height: 400px;
+  background: #00ffaa;
+  bottom: -100px;
+  right: -80px;
+  animation-delay: 3s;
+}
+
+@keyframes floatOrb {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(30px);
+  }
+}
+
+/* ===== Main Card Container ===== */
+.main-container {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  width: 85%;
+  max-width: 1150px;
+
+  /* ✨ Reduced blur & increased transparency */
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+
+  border-radius: 25px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  overflow: hidden;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== Left: Form Section ===== */
+.form-container {
+  flex: 1;
+  min-width: 350px;
+  padding: 50px 40px;
+  border-right: 1px solid rgba(0, 255, 255, 0.25);
+  animation: floatBox 6s ease-in-out infinite;
+}
+
+@keyframes floatBox {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #00f5ff;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #00f5ff, 0 0 20px #00e5ff;
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  font-weight: 600;
+  color: #aef1f1;
+  letter-spacing: 0.5px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 15px;
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  box-shadow: 0 0 15px #00f5ff, 0 0 35px #00f5ff;
+  transform: scale(1.03);
+}
+
+button {
+  width: 100%;
+  margin-top: 28px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #000;
+  background: linear-gradient(90deg, #00f5ff, #00ffaa, #00d4ff);
+  background-size: 200%;
+  cursor: pointer;
+  transition: 0.4s ease;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-position: right center;
+  box-shadow: 0 0 40px #00ffff;
+  transform: scale(1.08);
+}
+
+/* ===== Right: Result Section ===== */
+.result-container {
+  flex: 1;
+  min-width: 350px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: cyan;
+  font-size: 22px;
+  text-shadow: 0 0 15px cyan;
+}
+
+.result-container h3 {
+  font-size: 26px;
+  color: #00ffaa;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px #00ffaa, 0 0 30px #00ffaa;
+}
+
+.result-container p {
+  font-size: 20px;
+  color: #aef1f1;
+}
+
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .form-container {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.25);
+  }
+}
