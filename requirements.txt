@@ -1,7 +1,6 @@
-streamlit==1.39.0
-pandas
+Flask
+pandas 
 numpy
 scikit-learn
-pillow
-joblib
 matplotlib
+seaborn 
