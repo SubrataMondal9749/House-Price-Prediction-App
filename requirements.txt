@@ -4,5 +4,6 @@ numpy
 scikit-learn
 matplotlib
 seaborn 
-
-Pillow==10.2.0
+streamlit
+joblib
+pillow
